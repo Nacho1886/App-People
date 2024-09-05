@@ -1,2 +1,6 @@
-
+/.angular/cache
+/.vscode
+/node_modules
+/.idea
+/dist
 .DS_Store
