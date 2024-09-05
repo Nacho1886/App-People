@@ -1,0 +1,5 @@
+@if (people$ | async; as people) {
+  <app-table [items]="people" (emitPerson)="changePersonFav($event)">
+    <button mat-button (click)="openFavs(people)">Open Favs</button>
+  </app-table>
+}

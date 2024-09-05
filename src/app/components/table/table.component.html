@@ -1,0 +1,64 @@
+<mat-form-field>
+  <mat-label>Filter</mat-label>
+  <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+</mat-form-field>
+
+<ng-content></ng-content>
+
+<table mat-table [dataSource]="dataSource!" matSort class="mat-elevation-z8">
+
+  <!-- No Column -->
+  <ng-container matColumnDef="no">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by number">
+      No.
+    </th>
+    <td mat-cell *matCellDef="let element; let i = index"> {{i + 1}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="nombre">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by name">
+      Name
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+  </ng-container>
+<!--
+  <!-- Category Column -->
+  <ng-container matColumnDef="categoria">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by category">
+      Category
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.categoria}} </td>
+  </ng-container>
+
+  <!-- Company Column -->
+  <ng-container matColumnDef="empresa">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by company">
+      Company
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.empresa}} </td>
+  </ng-container>
+
+  <!-- Happiness Level Column -->
+  <ng-container matColumnDef="nivelFelicidad">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by happiness">
+      Happiness Level
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.nivelFelicidad}} </td>
+  </ng-container>
+
+  <!-- Favorite Column -->
+  <ng-container matColumnDef="fav">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by favorite">
+      Favorite
+    </th>
+    <td mat-cell *matCellDef="let element" (click)="touchFav(element)">
+      <mat-icon *ngIf="element.fav">favorite</mat-icon>
+      <mat-icon *ngIf="!element.fav">favorite_border</mat-icon>
+    </td>
+  </ng-container>
+
+  <!-- Table Rows -->
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr> -->
+</table>
